@@ -4,7 +4,7 @@ This is a simple refactoring kata written in Java. There are code smells that yo
 refactoring. Feel free to clone this project to practice some basic refactoring. Have fun and happy refactoring.
 
 ## What is this project about
-This project is about a simple Point-of-sale (POS) system for a drink stall. When the list of orders is provided to the system,
+This project is about a simple Point-of-sale (POS) system for a drink stall. When the order is provided to the system,
 the system will process the order and output the OrderDetail containing the total price, receipt number and voucher for customer.
 
 ### Project Structure
