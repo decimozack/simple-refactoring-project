@@ -1,10 +1,13 @@
 package com.zack.refactoring.services;
 
+import com.zack.refactoring.dao.VoucherDao;
 import com.zack.refactoring.models.Customer;
 import com.zack.refactoring.models.Voucher;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -17,6 +20,13 @@ class VoucherServiceTest {
     @BeforeEach
     void setUp() {
         uut = new VoucherService();
+    }
+
+    @AfterEach
+    void tearDown() throws NoSuchFieldException, IllegalAccessException {
+        Field field = VoucherDao.class.getDeclaredField("voucherDao");
+        field.setAccessible(true);
+        field.set(null, null);
     }
 
 //    @Test
