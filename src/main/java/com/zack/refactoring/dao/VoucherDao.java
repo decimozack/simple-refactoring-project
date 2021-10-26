@@ -40,4 +40,5 @@ public class VoucherDao {
     public int getNextVoucherCode() {
         return voucherCount;
     }
+
 }
