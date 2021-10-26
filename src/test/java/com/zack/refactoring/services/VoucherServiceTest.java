@@ -22,6 +22,13 @@ class VoucherServiceTest {
         uut = new VoucherService();
     }
 
+    @AfterEach
+    void tearDown() throws NoSuchFieldException, IllegalAccessException {
+        Field field = VoucherDao.class.getDeclaredField("voucherDao");
+        field.setAccessible(true);
+        field.set(null, null);
+    }
+
     @Test
     void eligibleForBirthdayVoucher_returnNull_GivenNonMember() {
         Customer customer = new Customer("name", LocalDate.now(), false, false);
